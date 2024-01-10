@@ -7,7 +7,7 @@ import CounterOne from "../components/counter/CounterOne";
 // import CounterTwo from "../components/counter/CounterTwo";
 import FeatureTwo from "../components/features/FeatureOne";
 import AboutOne from "../components/about/AboutOne";
-import CausesFour from "../components/causes/CausesFour";
+// import CausesFour from "../components/causes/CausesFour";
 import ProjectOne from "../components/project/ProjectOne";
 // import BrandTwo from "../components/brand/BrandTwo";
 import SkillOne from "../components/skills/SkillOne";
