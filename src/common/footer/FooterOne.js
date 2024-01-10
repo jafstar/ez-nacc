@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export default class FooterOne extends React.Component {
   componentDidMount() {
@@ -36,7 +36,7 @@ export default class FooterOne extends React.Component {
     }
   }
   render() {
-    let publicUrl = process.env.PUBLIC_URL + "/";
+    // let publicUrl = process.env.PUBLIC_URL + "/";
     return (
       <>
         <footer className="site-footer-one">
