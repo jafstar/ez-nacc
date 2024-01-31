@@ -1,8 +1,8 @@
 import React from "react";
 import { lazy, LazyBoundary } from "react-imported-component";
 
-import HeaderTwo from "../common/header/HeaderTwo";
-import FooterOne from "../common/footer/FooterOne";
+// import HeaderTwo from "../common/header/HeaderTwo";
+// import FooterOne from "../common/footer/FooterOne";
 
 const HomeDefault = () => {
   const [compList, setCompList] = React.useState(null);
