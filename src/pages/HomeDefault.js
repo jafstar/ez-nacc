@@ -30,6 +30,9 @@ const HomeDefault = () => {
           const tmpPath = itm.comp_path
             ? `${itm.comp_path}`
             : `/${itm.comp_type}`;
+          // const finalPath = itm.comp_path.includes(".")
+          //   ? `${itm.comp_path}`
+          //   : `../components/${itm.comp_type}`;
           return lazy(() => import(`../components${tmpPath}`));
         });
         setPageContent(tmpContent);
@@ -41,7 +44,7 @@ const HomeDefault = () => {
 
   return (
     <>
-      <HeaderTwo />
+      {/* <HeaderTwo /> */}
 
       {pageContent &&
         compList &&
@@ -53,7 +56,7 @@ const HomeDefault = () => {
             </div>
           );
         })}
-      <FooterOne />
+
       {/* <HeroTwo />
       <TwoSection />
 
