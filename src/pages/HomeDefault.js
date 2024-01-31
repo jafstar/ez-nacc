@@ -1,46 +1,84 @@
 import React from "react";
-import HeaderTwo from "../common/header/HeaderTwo";
-import HeroTwo from "../components/hero/HeroTwo";
-import TwoSection from "../components/two-section/TwoSectionOne";
-import CounterOne from "../components/counter/CounterOne";
+import { lazy, LazyBoundary } from "react-imported-component";
 
-// import CounterTwo from "../components/counter/CounterTwo";
-import FeatureTwo from "../components/features/FeatureOne";
-import AboutOne from "../components/about/AboutOne";
-// import CausesFour from "../components/causes/CausesFour";
-import ProjectOne from "../components/project/ProjectOne";
-// import BrandTwo from "../components/brand/BrandTwo";
-import SkillOne from "../components/skills/SkillOne";
-import TeamOne from "../components/team/TeamOne";
-import VideoOne from "../components/video/VideoOne";
-import TestimonialOne from "../components/testimonial/TestimonialOne";
-import BlogSectionThree from "../components/blog/BlogSectionThree";
+import HeaderTwo from "../common/header/HeaderTwo";
 import FooterOne from "../common/footer/FooterOne";
 
 const HomeDefault = () => {
+  const [compList, setCompList] = React.useState(null);
+  const [pageContent, setPageContent] = React.useState(null);
+
+  React.useEffect(() => {
+    const API_BASE = `https://gnbxwvzlnzromuawcswx.supabase.co/functions/v1`;
+    const URL = `${API_BASE}/pages/index`;
+
+    const res = fetch(URL, {
+      method: "POST",
+      mode: "cors",
+      // headers: {
+      //   AuthEZ: `123456789`,
+      // },
+      referrer: "http://nacc.ez",
+    }).then((resp) => {
+      resp.json().then((data) => {
+        // console.log("data: ", data);
+        const tmpTitle = data[0]?.page_title || "Welcome";
+        const tmpContent = data[0].page_content;
+        const tmpList = tmpContent.map((itm) => {
+          // console.log("itm: ", itm);
+
+          const tmpPath = itm.comp_path
+            ? `${itm.comp_path}`
+            : `/${itm.comp_type}`;
+          return lazy(() => import(`../components${tmpPath}`));
+        });
+        setPageContent(tmpContent);
+
+        setCompList([...tmpList]);
+      });
+    });
+  }, []);
+
   return (
     <>
       <HeaderTwo />
-      <HeroTwo />
+
+      {pageContent &&
+        compList &&
+        compList.map((Itm, idx) => {
+          // console.log("Itm: ", Itm);
+          return (
+            <div key={`itm-${idx}`}>
+              <Itm content={pageContent[idx].comp_content} />
+            </div>
+          );
+        })}
+      <FooterOne />
+      {/* <HeroTwo />
       <TwoSection />
 
       <FeatureTwo />
 
-      {/* <CounterTwo /> */}
       <AboutOne />
       <CounterOne />
-      {/* <CausesFour /> */}
+
       <ProjectOne />
 
-      {/* <BrandTwo /> */}
       <SkillOne />
       <TeamOne />
       <VideoOne />
       <TestimonialOne />
-      <BlogSectionThree />
-      <FooterOne />
+      <BlogSectionThree /> */}
     </>
   );
 };
 
 export default HomeDefault;
+
+/**
+ * 
+ * 
+ *              <BrandTwo /> 
+    <CausesFour /> 
+       <CounterTwo /> 
+ */

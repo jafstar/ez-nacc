@@ -1,0 +1,17 @@
+.bannerText {
+  background: #2d2410;
+  text-align: center;
+  padding: 40px;
+}
+.bannerText h2 {
+  color: #fff;
+  font-size: 44px;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  .bannerText h2 {
+    font-size: 26px;
+  }
+}
