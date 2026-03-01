@@ -1,0 +1,76 @@
+.ezHero {
+  /* background: #fff url("./img/hero-bg.jpg") no-repeat;
+  background-size: cover; */
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+
+  row-gap: 80px;
+  position: relative;
+  overflow: hidden;
+  width: 96vw;
+  margin: 0 auto;
+  background: #000;
+}
+.ezHero.noButtons {
+  height: 66vh;
+  padding-top: 150px;
+}
+.ezHero .bgImg {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  left: 0;
+  width: 95%;
+  height: 80%;
+  margin: 40px;
+  z-index: 0;
+}
+.ezHero > div {
+  max-width: 50%;
+  position: relative;
+  z-index: 100;
+}
+
+.ezHero h2 {
+  font-size: 94px;
+  font-weight: 300;
+
+  line-height: 105%;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  margin-left: 10vw;
+  width: 60vw;
+}
+
+.ezHero p {
+  margin-top: 20px;
+  color: #fff;
+  line-height: 150%;
+}
+
+@media screen and (max-width: 600px) {
+  .ezHero {
+    height: 780px;
+    padding: 40px;
+    justify-content: flex-start;
+  }
+  .ezHero.noButtons {
+    height: 600px;
+    padding-top: 40px;
+  }
+  .ezHero > div:first-child {
+    margin-top: 142px;
+  }
+  .ezHero h2 {
+    font-size: 54px;
+  }
+
+  .ezHero p {
+    font-size: 16px;
+    line-height: 180%;
+  }
+}

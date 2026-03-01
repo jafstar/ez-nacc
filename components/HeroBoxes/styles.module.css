@@ -1,0 +1,150 @@
+.ezHeroBoxShell {
+  background: #c2e9f1;
+  padding: 200px 0 100px 0;
+  position: relative;
+}
+.ezHeroBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1000;
+}
+
+.heroBoxTitle {
+  text-align: center;
+}
+.heroBoxTitle h2 {
+  color: #249fcb;
+  font-size: 54px;
+  max-width: 500px;
+  line-height: 100%;
+  margin-bottom: 20px;
+}
+
+.heroBoxTitle p {
+  color: #838383;
+  font-size: 36px;
+  font-weight: 200;
+}
+
+.heroBoxItemContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 80px;
+  max-width: 1000px;
+  justify-content: center;
+}
+
+.heroBoxItem {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  border-left: 1px solid #ccc;
+  padding: 10px 40px;
+  align-items: center;
+  padding-top: 40px;
+}
+.heroBoxItem:first-child {
+  border-left: none;
+}
+.heroBoxItem h3 {
+  color: #555;
+  text-align: center;
+  font-size: 24px;
+}
+.heroBoxItem p {
+  text-align: center;
+  color: #555;
+}
+
+/** BG **/
+.ezHeroBoxBG {
+  background: transparent;
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.ezHeroBoxBG_1 {
+  width: 100px;
+  height: 100px;
+  background: transparent url("/images/cloud.png") no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: 300px;
+  top: 100px;
+  transform: scaleY(-1) rotate(180deg);
+  opacity: 0.6;
+}
+.ezHeroBoxBG_2 {
+  width: 150px;
+  height: 150px;
+  background: transparent url("/images/cloud.png") no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: 700px;
+  top: 150px;
+  opacity: 0.6;
+}
+.ezHeroBoxBG_3 {
+  width: 50px;
+  height: 50px;
+  background: transparent url("/images/cloud.png") no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: 870px;
+  top: 220px;
+  opacity: 0.6;
+}
+.ezHeroBoxBG_4 {
+  width: 170px;
+  height: 170px;
+  background: transparent url("/images/cloud.png") no-repeat;
+  background-size: contain;
+  transform: rotate(180deg);
+  position: absolute;
+  right: 100px;
+  top: -40px;
+  opacity: 0.6;
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .boxNum1 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 40px;
+  }
+  .boxNum2 {
+    border-bottom: 1px solid #ccc;
+  }
+  .boxNum3 {
+    border-left: none !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .heroBoxItem {
+    border-left: none;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+  }
+  .heroBoxItem:first-child {
+    border-top: none;
+  }
+
+  .heroBoxTitle h2 {
+    font-size: 34px;
+  }
+  .heroBoxTitle p {
+    font-size: 20px;
+  }
+  .heroBoxItemContainer {
+    margin-top: 0;
+  }
+  .heroBoxItem h3 {
+    font-size: 20px;
+  }
+}

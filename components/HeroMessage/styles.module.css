@@ -1,0 +1,22 @@
+.ezHeroMessageShell {
+  background: #f0f0f0;
+}
+
+.ezHeroMessage {
+  background: #0089bc url(/images/hero-message-bg.png) no-repeat;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  padding: 200px 0;
+  background-position: bottom;
+  height: 800px;
+}
+
+.ezHeroMessage h2 {
+  max-width: 900px;
+  font-weight: 300;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+}

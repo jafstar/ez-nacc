@@ -1,0 +1,23 @@
+.htmlBox {
+  background: #fff;
+  text-align: center;
+  padding: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 2vw;
+  border-radius: 20px;
+}
+.htmlBox h2 {
+  color: #fff;
+  font-size: 44px;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  .htmlBox h2 {
+    font-size: 18px;
+  }
+}

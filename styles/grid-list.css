@@ -1,0 +1,57 @@
+/** Grid List Item **/
+/* #spec-item-0 {
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+#spec-item-1 {
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+#spec-item-2 {
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+#spec-item-3 {
+  border-bottom: 1px solid #ccc;
+}
+#spec-item-4 {
+  border-right: 1px solid #ccc;
+}
+#spec-item-5 {
+  border-right: 1px solid #ccc;
+}
+#spec-item-6 {
+  border-right: 1px solid #ccc;
+}
+
+@media screen and (max-width: 800px) {
+  #spec-item-2 {
+    border-right: none;
+  }
+  #spec-item-3 {
+    border-right: 1px solid #ccc;
+  }
+  #spec-item-5 {
+    border-right: none;
+  }
+
+  #spec-item-4 {
+    border-bottom: 1px solid #ccc;
+  }
+  #spec-item-5 {
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #spec-item-1,
+  #spec-item-3,
+  #spec-item-5 {
+    border-right: none;
+  }
+  #spec-item-2 {
+    border-right: 1px solid #ccc;
+  }
+} */

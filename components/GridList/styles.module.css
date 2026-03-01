@@ -1,0 +1,53 @@
+.ezGridList {
+  display: grid;
+  max-width: 96vw;
+  margin: 0 auto;
+  padding: 40px 0;
+  grid-template-columns: 33% 33% 33%;
+  row-gap: 40px;
+}
+
+.gridItem {
+  width: 96%;
+  height: 200px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  margin: 20px;
+  border-radius: 5px;
+  height: 100%;
+  padding: 50px 0;
+}
+
+/* .gridItem a {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  align-self: flex-start;
+  margin-top: 50px;
+} */
+
+.gridIcon {
+  width: 64px;
+  height: 64px;
+  background: transparent;
+}
+
+.gridTitle {
+  line-height: 105%;
+  margin-top: 10px;
+  font-size: 16px;
+  max-width: 120px;
+  text-align: center;
+  color: #555;
+}
+
+@media screen and (max-width: 400px) {
+  .gridItem {
+    border-right: none !important;
+    border-bottom: 1px solid #ccc;
+  }
+}

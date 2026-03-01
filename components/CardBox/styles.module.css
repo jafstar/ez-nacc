@@ -1,0 +1,48 @@
+.cardBox {
+  max-width: 900px;
+  background: #fff;
+  column-gap: 100px;
+  padding: 40px;
+  margin: 0 auto;
+  align-items: center;
+  color: #333;
+}
+.cardBoxImg {
+  width: 200px;
+}
+
+.cardBoxImg img {
+  width: 100%;
+}
+.cardBoxMsg {
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.cardBoxMsg h3 {
+  font-weight: bolder;
+}
+
+.cardBoxMsg p {
+  font-size: 20px;
+  padding-right: 40px;
+  font-weight: 300;
+}
+
+@media screen and (max-width: 830px) {
+  .cardBox {
+    justify-content: center;
+    row-gap: 40px;
+  }
+  .cardBoxMsg {
+    text-align: center;
+  }
+
+  .cardBoxMsg a {
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 15px 35px;
+    margin: 40px 0;
+  }
+}

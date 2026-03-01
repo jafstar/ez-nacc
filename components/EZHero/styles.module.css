@@ -1,0 +1,55 @@
+.ezHeroShell {
+  padding: 40px;
+}
+.ezHero {
+  background: #fff url("./img/hero-bg.jpg") no-repeat;
+  background-size: cover;
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 80px;
+  max-width: 96vw;
+  margin: 0 auto;
+}
+.ezHero > div {
+  max-width: 80vw;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.ezHero h2 {
+  font-size: 94px;
+  line-height: 105%;
+  color: #fff;
+  margin: 0;
+  padding: 40px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.ezHero p {
+  margin-top: 20px;
+  color: #fff;
+  line-height: 150%;
+}
+
+@media screen and (max-width: 600px) {
+  .ezHero {
+    height: 780px;
+    padding: 40px;
+    justify-content: flex-start;
+  }
+  .ezHero > div:first-child {
+    margin-top: 142px;
+  }
+  .ezHero h2 {
+    font-size: 54px;
+  }
+
+  .ezHero p {
+    font-size: 16px;
+    line-height: 180%;
+  }
+}

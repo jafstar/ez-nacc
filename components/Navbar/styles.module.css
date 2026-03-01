@@ -1,0 +1,182 @@
+.navBar {
+  width: 100%;
+  display: flex;
+  height: 140px;
+  align-items: center;
+  padding: 0;
+  /* column-gap: 140px; */
+}
+.navBar nav ul {
+  list-style-type: none;
+  display: flex;
+  column-gap: 20px;
+}
+.navBar nav ul a {
+  color: #000;
+  text-wrap: nowrap;
+}
+.navBarInner {
+  background: #fff;
+  border-radius: 0px;
+  display: flex;
+  width: 96vw;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.logoContainer {
+  background: #fff;
+  height: 100px;
+  width: 570px;
+  line-height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.logoContainer a {
+  display: block;
+  height: 100%;
+  color: #000;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.logoImgDiv {
+  background: #000 url("./img/logo.png") no-repeat center center;
+  /* background-size: contain; */
+  height: 100px;
+  width: 150px;
+}
+
+.logoTitle {
+  max-width: 410px;
+}
+.logoContainer h1 {
+  color: #000;
+  line-height: 100%;
+  margin-left: 25px;
+}
+
+.navHomeLink {
+  display: none;
+}
+
+.navMenuBtn {
+  cursor: pointer;
+  margin-right: 20px;
+  display: none;
+  width: 50px;
+  height: 25px;
+  justify-content: space-between;
+  background: transparent;
+  position: relative;
+  z-index: 1000;
+  top: 20px;
+  -webkit-tap-highlight-color: transparent !important;
+  outline: none !important;
+}
+
+.navMenuBtn span {
+  display: block;
+  width: 44px;
+  height: 1px;
+  background: #333;
+}
+.menuClosed .navMenuBtn span {
+  background: #fff;
+}
+
+.menuOpen nav {
+  display: block;
+  position: absolute;
+  width: 100vw;
+  height: auto;
+  background: rgba(255, 255, 255, 1);
+  right: 0px;
+  padding: 40px;
+  margin-top: 0px;
+  top: 0;
+  height: 100vh;
+}
+.menuOpen nav ul {
+  margin-top: 80px;
+}
+
+.menuOpen nav li.navActionBtn a {
+  width: 100%;
+  display: block;
+  text-align: center;
+  color: #fff;
+  padding: 0px 0px;
+  margin-top: 20px;
+}
+
+.menuOpen nav ul {
+  display: block;
+  line-height: 60px;
+}
+.menuOpen nav ul li {
+  border-top: 1px solid #999;
+}
+.menuOpen nav ul li:first-child {
+  border: none;
+}
+.menuOpen nav ul li a {
+  color: #000;
+  display: block;
+}
+
+@media screen and (min-width: 1101px) {
+  .navBar {
+    justify-content: center;
+  }
+  .navMenu {
+    margin-top: 0px;
+  }
+  .navActionBtn {
+    margin-left: 11vw;
+    margin-right: 50px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .navMenuBtn {
+    display: flex;
+    flex-direction: column;
+  }
+  .navHomeLink {
+    display: block;
+  }
+  .navBar {
+    flex-wrap: wrap;
+    padding: 0;
+    justify-content: space-between;
+  }
+
+  .navBar .menuClosed nav {
+    display: none;
+  }
+
+  .navBar .menuOpen .navMenuBtn > span:first-child {
+    transform: rotate(45deg);
+    transform-origin: 20% 0;
+  }
+
+  .navBar .menuOpen .navMenuBtn > span ~ span {
+    display: none;
+  }
+
+  .navBar .menuOpen .navMenuBtn > span:last-child {
+    display: block;
+    transform: rotate(-45deg);
+    transform-origin: left;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1100px) {
+}
+
+@media screen and (max-width: 600px) {
+}
