@@ -25,19 +25,6 @@ const HeaderOne = (props) => {
     )[0].global_content[0].comp_content;
   }, [props.globals]);
 
-  // Effects
-  // React.useEffect(() => {
-  //   console.log("props: ", props);
-  // }, []);
-
-  // React.useEffect(()=> {
-  //   console.log("headerContent: ", headerContent);
-  // }, [headerContent])
-
-  // React.useEffect(()=> {
-  //   console.log("navData: ", navData);
-  // }, [navData])
-
   return (
     <>
       <header className="main-header clearfix">

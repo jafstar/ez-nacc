@@ -14,7 +14,7 @@ const SearchButton = () => {
                 <Modal show={show} onHide={handleClose} className="search-popup__overlay search-toggler">
                 <div className="search-popup__content">
                     <form action="#">
-                        <label for="search" className="sr-only">search here</label>
+                        <label htmlFor="search" className="sr-only">search here</label>
                         <input type="text" id="search" placeholder="Search Here..." />
                         <button type="submit" aria-label="search submit" className="thm-btn">
                             <i className="icon-search-interface-symbol"></i>

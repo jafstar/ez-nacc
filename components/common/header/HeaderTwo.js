@@ -9,9 +9,6 @@ export default class HeaderTwo extends React.Component {
     super(props);
   }
 
-  // componentDidMount() {
-  //   console.log("props: ", this.props);
-  // }
   render() {
     let publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL + "/";
     const navData = this.props.globals.filter(

@@ -117,7 +117,6 @@ const MobileMenu = ({ data }) => {
 
   const showSidebar = () => setSidebar(!sidebar);
   let publicUrl = "/";
-  // console.log("data: ", data);
 
   return (
     <>
