@@ -4,8 +4,8 @@ import { useRouter } from "next/router";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-import "@/styles/globals.css";
-import "@/styles/grid-list.css";
+import "../styles/globals.css";
+import "../styles/grid-list.css";
 import "@splidejs/react-splide/css";
 import "@splidejs/react-splide/css/core";
 // import { AppProps } from "next/app";
