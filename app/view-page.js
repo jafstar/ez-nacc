@@ -1,12 +1,12 @@
 "use client";
 
-import { composeContent, ViewContent } from "ez-content";
-// import ViewContent from "@/components/ViewContent";
+import { ViewContent } from "ez-content";
+import { composeContentLocal } from "./component-registry";
 import Header from "../components/common/header/HeaderOne";
 import Footer from "../components/common/footer/FooterOne";
 
 export default function SlugPage({ content, globals, isPreview }) {
-  const { compListAll, contentListAll } = composeContent(
+  const { compListAll, contentListAll } = composeContentLocal(
     content,
     globals,
     isPreview
