@@ -32,10 +32,7 @@ export default function RootLayout({ children }) {
           content="interest-cohort=()" 
         />
 
-        <meta
-          httpEquiv="Content-Security-Policy"
-          content="block-all-mixed-content"
-        />
+
 
 
 
@@ -57,10 +54,7 @@ export default function RootLayout({ children }) {
           href="/assets/images/favicons/favicon-16x16.png"
         />
         <meta name="deScription" content="Needed Action and Community Care" />
-        <meta
-          httpEquiv="Content-Security-Policy"
-          content="upgrade-insecure-requests"
-        />
+
         <link rel="manifest" href="/manifest.json" />
         <link rel="canonical" href={`https://www.nacc.ngo${pathname}`} />
 
