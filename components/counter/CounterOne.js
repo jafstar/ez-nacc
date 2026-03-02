@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Script from "next/script";
-// import $ from "jquery";
 const CounterOne = ({ content }) => {
   return (
     <>
@@ -10,9 +9,6 @@ const CounterOne = ({ content }) => {
         <div className="container">
         <div
           className="counter-one-bg"
-          // data-jarallax
-          // data-speed="0.2"
-          // data-imgposition="50% 0%"
           style={{
             backgroundImage: `url(${
               content.bgImg ?? "/assets/images/backgrounds/counter-one-bg.jpg"

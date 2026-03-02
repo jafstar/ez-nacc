@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import Script from "next/script";
-import $ from "jquery";
 
 const SkillsOne = ({ content }) => {
   return (
@@ -46,71 +45,6 @@ const SkillsOne = ({ content }) => {
                 }}
               ></p>
 
-              {/* <div className="progress-levels">
-          
-                  <div className="progress-box">
-                    <div className="inner count-box">
-                      <div className="text">Donating</div>
-                      <div className="bar">
-                        <div className="bar-innner">
-                          <div className="skill-percent">
-                            <span
-                              className="count-text"
-                              data-speed="3000"
-                              data-stop="90"
-                            >
-                              0
-                            </span>
-                            <span className="percent">%</span>
-                          </div>
-                          <div className="bar-fill" data-percent="90"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                
-                  <div className="progress-box">
-                    <div className="inner count-box">
-                      <div className="text">Fundraise</div>
-                      <div className="bar">
-                        <div className="bar-innner">
-                          <div className="skill-percent">
-                            <span
-                              className="count-text"
-                              data-speed="3000"
-                              data-stop="82"
-                            >
-                              0
-                            </span>
-                            <span className="percent">%</span>
-                          </div>
-                          <div className="bar-fill" data-percent="82"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                
-                  <div className="progress-box last-child">
-                    <div className="inner count-box">
-                      <div className="text">Consultancy</div>
-                      <div className="bar">
-                        <div className="bar-innner">
-                          <div className="skill-percent">
-                            <span
-                              className="count-text"
-                              data-speed="3000"
-                              data-stop="88"
-                            >
-                              0
-                            </span>
-                            <span className="percent">%</span>
-                          </div>
-                          <div className="bar-fill" data-percent="88"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
               <Link
                 href={`${content.btnLink ?? "#"}`}
                 className="thm-btn skill-one__btn"
@@ -120,70 +54,6 @@ const SkillsOne = ({ content }) => {
             </div>
           </div>
         </div>
-        {/* <Script id="progressBar">
-            {`
-      // Popular Causes Progress Bar
-      if ($(".count-bar").length) {
-        $(".count-bar").appear(
-          function () {
-            var el = $(this);
-            var percent = el.data("percent");
-            $(el).css("width", percent).addClass("counted");
-          },
-          {
-            accY: -50,
-          }
-        );
-      }
-      //Progress Bar / Levels
-      if ($(".progress-levels .progress-box .bar-fill").length) {
-        $(".progress-box .bar-fill").each(
-          function () {
-            $(".progress-box .bar-fill").appear(function () {
-              var progressWidth = $(this).attr("data-percent");
-              $(this).css("width", progressWidth + "%");
-            });
-          },
-          {
-            accY: 0,
-          }
-        );
-      }
-      //Fact Counter + Text Count
-      if ($(".count-box").length) {
-        $(".count-box").appear(
-          function () {
-            var $t = $(this),
-              n = $t.find(".count-text").attr("data-stop"),
-              r = parseInt($t.find(".count-text").attr("data-speed"), 10);
-            if (!$t.hasClass("counted")) {
-              $t.addClass("counted");
-              $({
-                countNum: $t.find(".count-text").text(),
-              }).animate(
-                {
-                  countNum: n,
-                },
-                {
-                  duration: r,
-                  easing: "linear",
-                  step: function () {
-                    $t.find(".count-text").text(Math.floor(this.countNum));
-                  },
-                  complete: function () {
-                    $t.find(".count-text").text(this.countNum);
-                  },
-                }
-              );
-            }
-          },
-          {
-            accY: 0,
-          }
-        );
-      }
-        `}
-          </Script> */}
       </section>
     </>
   );

@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 
 const TeamOne = ({ content }) => {
-  let publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL + "/";
   return (
     <>
       <section className="team-one">
@@ -18,7 +17,6 @@ const TeamOne = ({ content }) => {
               className="col-xl-4 col-lg-4 wow fadeInLeft"
               data-wow-delay="100ms"
             >
-              {/* Team One Single */}
               <div className="team-one__single">
                 <div className="team-one__img">
                   <img
@@ -40,7 +38,6 @@ const TeamOne = ({ content }) => {
               className="col-xl-4 col-lg-4 wow fadeInUp"
               data-wow-delay="200ms"
             >
-              {/* Team One Single */}
               <div className="team-one__single">
                 <div className="team-one__img">
                   <img
@@ -62,7 +59,6 @@ const TeamOne = ({ content }) => {
               className="col-xl-4 col-lg-4 wow fadeInRight"
               data-wow-delay="100ms"
             >
-              {/* Team One Single */}
               <div className="team-one__single">
                 <div className="team-one__img">
                   <img

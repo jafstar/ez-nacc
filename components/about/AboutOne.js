@@ -1,5 +1,4 @@
 import React from "react";
-import $ from "jquery";
 import Script from "next/script";
 
 const AboutOne = ({ content }) => {
@@ -122,7 +121,7 @@ const AboutOne = ({ content }) => {
         </div>
         <Script id="magnificPopup">
           {`
-        if ($(".video-popup").length) {
+        if (typeof $ !== 'undefined' && $(".video-popup").length) {
           $(".video-popup").magnificPopup({
             type: "iframe",
             mainClass: "mfp-fade",

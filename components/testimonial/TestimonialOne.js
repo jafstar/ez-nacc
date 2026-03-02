@@ -2,7 +2,6 @@ import React from "react";
 import Script from "next/script";
 import EZHTML from "ez-content/EZHTML";
 import { Swiper, SwiperSlide } from "swiper/react";
-// import { Pagination } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -30,10 +29,6 @@ const TestimonialOne = ({ content }) => {
                 spaceBetween: 50,
               },
             }}
-            // pagination={{
-            //   clickable: true,
-            // }}
-            // modules={[Pagination]}
             className="mySwiper"
           >
             {content.list &&

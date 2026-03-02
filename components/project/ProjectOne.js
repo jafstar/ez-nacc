@@ -24,7 +24,6 @@ const ProjectOne = ({ content }) => {
               className="col-xl-4 col-lg-4 col-md-12 wow fadeInUp"
               data-wow-delay="100ms"
             >
-              {/* Project One Single */}
               <div className="project-one__single">
                 <div className="project-one__img">
                   <img src={"assets/images/project/project-1-1.jpg"} alt="" />
@@ -43,7 +42,6 @@ const ProjectOne = ({ content }) => {
               className="col-xl-4 col-lg-4 col-md-6 wow fadeInUp"
               data-wow-delay="200ms"
             >
-              {/* Project One Single */}
               <div className="project-one__single">
                 <div className="project-one__img">
                   <img src={"assets/images/project/project-1-2.jpg"} alt="" />
@@ -57,7 +55,6 @@ const ProjectOne = ({ content }) => {
                   </div>
                 </div>
               </div>
-              {/* Project One Single */}
               <div className="project-one__single">
                 <div className="project-one__img">
                   <img src={"assets/images/project/project-1-3.jpg"} alt="" />
@@ -76,7 +73,6 @@ const ProjectOne = ({ content }) => {
               className="col-xl-4 col-lg-4 col-md-6 wow fadeInUp"
               data-wow-delay="300ms"
             >
-              {/* Project One Single */}
               <div className="project-one__single">
                 <div className="project-one__img">
                   <img src={"assets/images/project/project-1-4.jpg"} alt="" />
@@ -90,7 +86,6 @@ const ProjectOne = ({ content }) => {
                   </div>
                 </div>
               </div>
-              {/* Project One Single */}
               <div className="project-one__single">
                 <div className="project-one__img">
                   <img src={"assets/images/project/project-1-5.jpg"} alt="" />

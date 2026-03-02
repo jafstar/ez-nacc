@@ -14,10 +14,6 @@ const HeroV2 = ({ content }) => {
           loop={true}
           slidesPerView={1}
           spaceBetween={30}
-          // loopAddBlankSlides={true}
-          // slidesPerView={1}
-          // effect="fade"
-          // autoplay={{ delay: 5000 }}
           modules={[EffectFade, Pagination, Navigation]}
           pagination={{
             el: "#main-slider-pagination",
@@ -43,10 +39,6 @@ const HeroV2 = ({ content }) => {
                   }}
                 ></div>
                 <div className="main-slider-two__map">
-                  {/* <img
-                    src={"/assets/images/shapes/main-slider-two-map-1.png"}
-                    alt=""
-                  /> */}
                 </div>
                 <div className="main-slider-two__img">
                   <img

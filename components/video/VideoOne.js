@@ -3,7 +3,6 @@ import Link from "next/link";
 import Script from "next/script";
 
 const VideoOne = ({ content }) => {
-  let publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL + "/";
   return (
     <>
       <section className="video-one">
@@ -60,7 +59,7 @@ const VideoOne = ({ content }) => {
         </div>
         <Script id="VideoOneMagnificPopup">
           {`
-        if ($(".video-popup").length) {
+        if (typeof $ !== 'undefined' && $(".video-popup").length) {
           $(".video-popup").magnificPopup({
             type: "iframe",
             mainClass: "mfp-fade",
