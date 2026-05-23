@@ -4,25 +4,29 @@ import { composeContent, ViewContent } from "ez-content";
 // import ViewContent from "@/components/ViewContent";
 import Header from "@/components/common/header/HeaderOne";
 import Footer from "@/components/common/footer/FooterOne";
+import { rewriteImageUrlsDeep } from "@/utils/imageSource";
 
 export default function SlugPage({ content, globals, isPreview }) {
+  const rewrittenContent = rewriteImageUrlsDeep(content);
+  const rewrittenGlobals = rewriteImageUrlsDeep(globals);
+
   const { compListAll, contentListAll } = composeContent(
-    content,
-    globals,
-    isPreview
+    rewrittenContent,
+    rewrittenGlobals,
+    isPreview,
   );
 
   return (
     <div>
-      {!isPreview && <Header globals={globals} />}
+      {!isPreview && <Header globals={rewrittenGlobals} />}
       <main>
         <ViewContent
           components={compListAll}
           content={contentListAll}
-          globals={globals}
+          globals={rewrittenGlobals}
         />
       </main>
-      {!isPreview && <Footer globals={globals} />}
+      {!isPreview && <Footer globals={rewrittenGlobals} />}
     </div>
   );
 }

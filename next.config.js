@@ -43,6 +43,11 @@ const nextConfig = {
         hostname: "cdn.sanity.io",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        port: "",
+      },
       // {
       //   protocol: "https",
       //   hostname: "dummyimage.com",

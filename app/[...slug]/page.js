@@ -26,7 +26,7 @@ export default async function Page({ params }) {
   const resp = await getPages(params.slug);
   // console.log("resp2: ", resp)
 
-  if (resp && resp.data && resp.data.length && resp.data[0].page_content) {
+  if (resp?.content) {
     const { content, globals, isPreview } = resp;
     if (content) {
       return (
