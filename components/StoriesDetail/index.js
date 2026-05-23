@@ -1,11 +1,8 @@
 import React from "react";
-import Link from "next/link";
 import { DateTime } from "luxon";
-
-import StoriesAuthor from "@/components/StoriesAuthor";
 // import imgDemo from "@/public/assets/images/blog/blog-details-img-1.jpg";
 
-const StoriesDetail = ({ content, globals }) => {
+const StoriesDetail = ({ content }) => {
   //   console.log("content: ", content);
   const { created_at, content_title, content_slug, content_fields } =
     content[0];
@@ -13,13 +10,6 @@ const StoriesDetail = ({ content, globals }) => {
   // console.log("globals: ", globals);
 
   const dateObj = DateTime.fromISO(created_at).toFormat("DD");
-  const author_global = globals.filter(
-    (itm) => itm.global_title === "GlobalStoriesAuthor"
-  )[0].global_content[0].comp_content;
-
-  const author_info = author_global.list.filter(
-    (itm) => itm.author === content_fields.author
-  );
 
   // console.log("content_fields: ", content_fields);
 
@@ -152,7 +142,6 @@ const StoriesDetail = ({ content, globals }) => {
                 </div> */}
                 <br />
                 <br />
-                <StoriesAuthor content={{ ...author_info[0] }} />
                 {/* <div className="author-one">
                   <div className="author-one__image">
                     <img src={content_fields.author_image ?? ""} alt="" />
