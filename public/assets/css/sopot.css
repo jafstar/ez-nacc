@@ -7638,6 +7638,19 @@ a.sc-hLBbgP {
   margin-top: 29px;
 }
 
+.blog-details__content p {
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+.blog-details__content p:first-child {
+  margin-top: 0;
+}
+
+.blog-details__content p:last-child {
+  margin-bottom: 0;
+}
+
 .blog-details__meta {
   position: relative;
   display: flex;

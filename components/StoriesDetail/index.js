@@ -9,7 +9,7 @@ const StoriesDetail = ({ content }) => {
 
   // console.log("globals: ", globals);
 
-  const dateObj = DateTime.fromISO(created_at).toFormat("DD");
+  const dateObj = DateTime.fromISO(created_at).toFormat("yyyy");
 
   // console.log("content_fields: ", content_fields);
 
@@ -57,24 +57,24 @@ const StoriesDetail = ({ content }) => {
                   </ul> */}
                   <h3 className="blog-details__title">{content_title ?? ""}</h3>
 
-                  <p
-                    className="blog-details__text-1"
+                  <div
+                    className="blog-details__text-1 my-3"
                     dangerouslySetInnerHTML={{
                       __html: String(content_fields?.intro ?? "").replaceAll(
                         "\n",
                         "<br />"
                       ),
                     }}
-                  ></p>
-                  <p
-                    className="blog-details__text-2"
+                  ></div>
+                  <div
+                    className="blog-details__text-2 my-3"
                     dangerouslySetInnerHTML={{
                       __html: String(content_fields?.body ?? "").replaceAll(
                         "\n",
                         "<br />"
                       ),
                     }}
-                  ></p>
+                  ></div>
                 </div>
                 {/* <div className="blog-details__content-two">
                   <div className="blog-details__content-two-img">

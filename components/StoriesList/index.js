@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { DateTime } from "luxon";
 
 const StoriesList = ({ data }) => {
   return (
@@ -14,34 +13,13 @@ const StoriesList = ({ data }) => {
                 <div className="row">
                   {!!data.length &&
                     data.map((itm, idx) => {
-                      const dateObj = DateTime.fromISO(itm.created_at).toFormat(
-                        "DD"
-                      );
                       return (
                         <div
                           key={`list-item-${idx}`}
-                          className="col-md-6 col-12"
+                          className="col-md-6 col-12 my-3"
                         >
                           <div className="blog-sidebar__single">
-                            <div className="blog-sidebar__img">
-                              <img src={itm.content_fields.image} alt="" />
-                              <Link href={`/stories${itm.content_slug}`}>
-                                <span className="blog-one__plus"></span>
-                              </Link>
-                            </div>
                             <div className="blog-sidebar__content">
-                              <div className="blog-sidebar__meta">
-                                {/* <div className="blog-sidebar__cat">
-                                  <p>Corporate</p>
-                                </div> */}
-                                <div className="blog-sidebar__date">
-                                  <p>
-                                    {" "}
-                                    <span className="icon-calendar"></span>
-                                    {dateObj}
-                                  </p>
-                                </div>
-                              </div>
                               <h3 className="blog-sidebar__title">
                                 <Link href={`/stories${itm.content_slug}`}>
                                   {itm.content_fields.title}
@@ -56,6 +34,14 @@ const StoriesList = ({ data }) => {
                                   ).replaceAll("\n", "<br />"),
                                 }}
                               ></p>
+                              <div className="text-end mt-3">
+                                <Link
+                                  href={`/stories${itm.content_slug}`}
+                                  className="text-decoration-underline"
+                                >
+                                  {"> Read more..."}
+                                </Link>
+                              </div>
                             </div>
                           </div>
                         </div>
