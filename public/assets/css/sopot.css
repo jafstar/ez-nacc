@@ -401,7 +401,7 @@ ul {
 }
 
 .main-header__top-address li + li {
-  margin-left: 40px;
+  margin-left: 28px;
 }
 
 .main-header__top-address li .icon span {
@@ -1688,9 +1688,9 @@ a.sc-hLBbgP {
 
 #main-slider-pagination {
   z-index: 10;
-  bottom: 176px;
+  bottom: 200px;
   left: 50%;
-  width: 100%;
+  width: 32%;
   max-width: 1170px;
   -webkit-transform: translate(-50%, calc(-50% + 95px));
   transform: translate(-50%, calc(0% + 0px));
@@ -2013,7 +2013,7 @@ a.sc-hLBbgP {
 
 .main-slider-three #main-slider-pagination {
   text-align: center;
-  bottom: 121px;
+  bottom: 200px;
 }
 
 /***
