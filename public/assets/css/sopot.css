@@ -162,9 +162,13 @@ ul {
   padding: 17px 50px 17px;
   transition: all 0.35s;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 40px;
   text-transform: capitalize;
   z-index: 1;
+}
+
+.thm-btn.main-header__btn {
+  border-radius: 999px;
 }
 
 .thm-btn:hover {
@@ -551,7 +555,7 @@ a.sc-hLBbgP {
 
 .main-menu .main-menu__list > li > a,
 .stricky-header .main-menu__list > li > a {
-  font-size: 16px;
+  font-size: 18px;
   display: flex;
   align-items: center;
   color: var(--sopot-black);

@@ -1,26 +1,70 @@
 .donate-goal {
   width: 62vw;
   max-width: 1160px;
-  margin: 120px auto 20px;
+  margin: -72px auto 20px;
+  padding: clamp(24px, 2.6vw, 36px) clamp(14px, 1.4vw, 22px);
+  background: #fff;
+  border-radius: 28px;
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.16);
+  position: relative;
+  z-index: 3;
 }
 
 .donate-goal .causes-one__progress .bar {
-  height: clamp(30px, 14vw, 75px);
+  grid-area: bar;
+  height: clamp(12px, 1.25vw, 18px);
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(15, 23, 42, 0.08);
 }
 
-.donate-goal .causes-one__goals > p,
-.donate-goal .causes-one__goals > p > span {
-  font-size: clamp(14px, 2.2vw, 24px);
+.donate-goal .causes-one__progress {
+  display: grid;
+  grid-template-columns: minmax(90px, max-content) minmax(0, 1fr) minmax(90px, max-content);
+  grid-template-areas: "raised bar goal";
+  align-items: center;
+  gap: 18px;
+}
+
+.donate-goal .causes-one__goals {
+  display: contents;
+}
+
+.donate-goal .causes-one__goals > p {
+  margin: 0;
+  font-size: clamp(12px, 1.2vw, 16px);
+  line-height: 1.15;
+  color: #334155;
+  white-space: nowrap;
+}
+
+.donate-goal .causes-one__goals > p span {
+  display: block;
+  margin-bottom: 4px;
+  font-size: clamp(18px, 2vw, 28px);
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.donate-goal .causes-one__goals > p:first-child {
+  grid-area: raised;
+  text-align: right;
+}
+
+.donate-goal .causes-one__goals > p:last-child {
+  grid-area: goal;
+  text-align: left;
 }
 
 .donate-goal .causes-one__progress .bar-inner {
+  border-radius: inherit;
   height: 100%;
 }
 
 .donate-goal .causes-one__progress .bar-inner.counted .count-text {
   position: absolute;
-  right: -58px;
-  top: -47px;
+  right: -52px;
+  top: -42px;
   line-height: 40px;
   font-size: 20px;
   text-align: center;

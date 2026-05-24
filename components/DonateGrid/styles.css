@@ -1,0 +1,64 @@
+.donations-page .row {
+  --bs-gutter-y: 28px;
+}
+
+.donate-grid__card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px;
+  border-radius: 28px;
+  background: #fff;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.1);
+  overflow: hidden;
+}
+
+.donate-grid__card .causes-one__img {
+  border-radius: 22px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.donate-grid__card:hover .causes-one__img {
+  box-shadow: 0 16px 28px -18px rgba(15, 23, 42, 0.55);
+  transform: translateY(-2px);
+}
+
+.donate-grid__card .causes-one__img img {
+  display: block;
+  border-radius: inherit;
+}
+
+.donate-grid__card .causes-one__content-box {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 28px 10px 10px;
+  margin-top: -10px;
+  background: transparent;
+  border-radius: 0 0 22px 22px;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.donate-grid__card .causes-one__content {
+  flex: 1;
+  padding: 0;
+}
+
+.donate-grid__card .causes-one__donate-btn-box {
+  position: relative;
+  inset: auto;
+  margin-top: 18px;
+}
+
+.donate-grid__card .causes-one__donate-btn {
+  display: flex;
+  width: 100%;
+  min-height: 58px;
+  padding: 0 22px;
+  border-radius: 999px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

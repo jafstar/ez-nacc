@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import $ from "jquery";
 import imgDemo from "@/public/assets/images/ez-gray-370x250.jpg";
+import "./styles.css";
 
 const DonateGrid = ({ content }) => {
   //   componentDidMount() {
@@ -94,21 +95,11 @@ const DonateGrid = ({ content }) => {
                   className="col-xl-4 col-lg-4 col-md-6 wow fadeInUp"
                   data-wow-delay="100ms"
                 >
-                  <div className="causes-one__single">
+                  <div className="causes-one__single donate-grid__card">
                     <div className="causes-one__img">
                       <img src={itm?.image ?? imgDemo.src} alt="" />
                     </div>
                     <div className="causes-one__content-box">
-                      <div className="causes-one__donate-btn-box">
-                        <Link
-                          href={`${itm.link ?? "#"}`}
-                          rel="noFollow"
-                          target="_blank"
-                          className="thm-btn causes-one__donate-btn"
-                        >
-                          Donate <span>${itm?.amount ?? "--"}</span>{" "}
-                        </Link>
-                      </div>
                       <div className="causes-one__content">
                         <h3 className="causes-one__title">
                           <Link href={`${itm.link ?? "#"}`}>
@@ -135,6 +126,16 @@ const DonateGrid = ({ content }) => {
                             </Link>
                           </div>
                         ) : null} */}
+                      </div>
+                      <div className="causes-one__donate-btn-box">
+                        <Link
+                          href={`${itm.link ?? "#"}`}
+                          rel="noFollow"
+                          target="_blank"
+                          className="thm-btn causes-one__donate-btn"
+                        >
+                           <span>Give{" "}${itm?.amount ?? "--"}</span>
+                        </Link>
                       </div>
                     </div>
                   </div>
