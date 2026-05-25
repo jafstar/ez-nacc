@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 .env
+.yalc
+yalc.lock
+
 # testing
 /coverage
 

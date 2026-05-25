@@ -24,6 +24,7 @@ export default function SlugPage({ content, globals, isPreview }) {
           components={compListAll}
           content={contentListAll}
           globals={rewrittenGlobals}
+          isPreview={isPreview}
         />
       </main>
       {!isPreview && <Footer globals={rewrittenGlobals} />}

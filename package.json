@@ -18,7 +18,7 @@
     "dangerously-set-html-content": "^1.0.13",
     "eslint": "8.46.0",
     "eslint-config-next": "^14.0.4",
-    "ez-content": "^1.0.38",
+    "ez-content": "^1.1.0",
     "hex-to-rgba": "^2.0.1",
     "jquery": "^3.7.1",
     "luxon": "^3.5.0",
