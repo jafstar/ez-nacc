@@ -1,20 +1,20 @@
 import React from "react";
 import Link from "next/link";
 import { DateTime } from "luxon";
+import {
+  getContentTitle,
+  getContentImage,
+  getContentTags,
+  getContentCategory,
+} from "ez-content";
 
 export default function ContentTypeDetail({ item, type }) {
-  const { content_title, content_fields, created_at } = item;
+  const { content_fields, created_at } = item;
 
-  const date = DateTime.fromISO(created_at).toFormat("LLL d, yyyy");
-  const tags = Array.isArray(content_fields?.tags) ? content_fields.tags : [];
-  const category = content_fields?.category ?? null;
-
-  // Resolve display title across common field patterns
-  const title =
-    content_title ??
-    content_fields?.title ??
-    content_fields?.name ??
-    "";
+  const date     = DateTime.fromISO(created_at).toFormat("LLL d, yyyy");
+  const tags     = getContentTags(item);
+  const category = getContentCategory(item);
+  const title    = getContentTitle(item);
 
   return (
     <section className="blog-details">

@@ -2,50 +2,14 @@ import React from "react";
 import Link from "next/link";
 import { DateTime } from "luxon";
 import styles from "./styles.module.css";
-
-// --- field helpers (work for any content model) ---
-
-function getItemTitle(item) {
-  return (
-    item.content_title ??
-    item.content_fields?.title ??
-    item.content_fields?.name ??
-    "Untitled"
-  );
-}
-
-function getItemImage(item) {
-  return item.content_fields?.image ?? item.content_fields?.image_url ?? null;
-}
-
-function getItemIntro(item) {
-  return (
-    item.content_fields?.intro ??
-    item.content_fields?.description ??
-    item.content_fields?.bio ??
-    ""
-  );
-}
-
-function getItemTags(item) {
-  const tags = item.content_fields?.tags;
-  return Array.isArray(tags) ? tags : [];
-}
-
-function getItemCategory(item) {
-  return item.content_fields?.category ?? null;
-}
-
-// Build a URL for the list page, preserving active filters
-function listUrl(type, { tag, category, q, page } = {}) {
-  const sp = new URLSearchParams();
-  if (tag) sp.set("tag", tag);
-  if (category) sp.set("category", category);
-  if (q) sp.set("q", q);
-  if (page && page > 1) sp.set("page", String(page));
-  const qs = sp.toString();
-  return `/${type}${qs ? `?${qs}` : ""}`;
-}
+import {
+  getContentTitle,
+  getContentImage,
+  getContentIntro,
+  getContentTags,
+  getContentCategory,
+  buildListUrl,
+} from "ez-content";
 
 export default function ContentTypeList({
   data,
@@ -57,9 +21,9 @@ export default function ContentTypeList({
   activeCategory,
   q,
 }) {
-  const allTags = [...new Set(data.flatMap(getItemTags))].sort();
+  const allTags = [...new Set(data.flatMap(getContentTags))].sort();
   const allCategories = [
-    ...new Set(data.map(getItemCategory).filter(Boolean)),
+    ...new Set(data.map(getContentCategory).filter(Boolean)),
   ].sort();
   const totalPages = limit > 0 ? Math.ceil(total / limit) : 1;
   const hasSidebar = allTags.length > 0 || allCategories.length > 0;
@@ -111,7 +75,7 @@ export default function ContentTypeList({
                     <ul className={`list-unstyled ${styles.filterList}`}>
                       {activeCategory && (
                         <li>
-                          <Link href={listUrl(type, { tag: activeTag, q })}>
+                          <Link href={buildListUrl(type, { tag: activeTag, q })}>
                             All
                           </Link>
                         </li>
@@ -122,7 +86,7 @@ export default function ContentTypeList({
                           className={activeCategory === cat ? styles.active : ""}
                         >
                           <Link
-                            href={listUrl(type, {
+                            href={buildListUrl(type, {
                               category: cat,
                               tag: activeTag,
                               q,
@@ -143,7 +107,7 @@ export default function ContentTypeList({
                     <div className={styles.tagCloud}>
                       {activeTag && (
                         <Link
-                          href={listUrl(type, { category: activeCategory, q })}
+                          href={buildListUrl(type, { category: activeCategory, q })}
                           className={styles.tag}
                         >
                           All
@@ -152,7 +116,7 @@ export default function ContentTypeList({
                       {allTags.map((tag) => (
                         <Link
                           key={tag}
-                          href={listUrl(type, {
+                          href={buildListUrl(type, {
                             tag,
                             category: activeCategory,
                             q,
@@ -179,7 +143,7 @@ export default function ContentTypeList({
                   <span className={styles.chip}>
                     &ldquo;{q}&rdquo;{" "}
                     <Link
-                      href={listUrl(type, {
+                      href={buildListUrl(type, {
                         tag: activeTag,
                         category: activeCategory,
                       })}
@@ -192,7 +156,7 @@ export default function ContentTypeList({
                   <span className={styles.chip}>
                     Tag: {activeTag}{" "}
                     <Link
-                      href={listUrl(type, { category: activeCategory, q })}
+                      href={buildListUrl(type, { category: activeCategory, q })}
                     >
                       ×
                     </Link>
@@ -201,7 +165,7 @@ export default function ContentTypeList({
                 {activeCategory && (
                   <span className={styles.chip}>
                     Category: {activeCategory}{" "}
-                    <Link href={listUrl(type, { tag: activeTag, q })}>×</Link>
+                    <Link href={buildListUrl(type, { tag: activeTag, q })}>×</Link>
                   </span>
                 )}
               </div>
@@ -212,11 +176,11 @@ export default function ContentTypeList({
             ) : (
               <div className="row">
                 {data.map((item, idx) => {
-                  const title = getItemTitle(item);
-                  const image = getItemImage(item);
-                  const intro = getItemIntro(item);
-                  const tags = getItemTags(item);
-                  const cat = getItemCategory(item);
+                  const title = getContentTitle(item);
+                  const image = getContentImage(item);
+                  const intro = getContentIntro(item);
+                  const tags = getContentTags(item);
+                  const cat = getContentCategory(item);
                   const date = DateTime.fromISO(item.created_at).toFormat(
                     "LLL d, yyyy"
                   );
@@ -242,7 +206,7 @@ export default function ContentTypeList({
                         <div className="blog-sidebar__content">
                           {cat && (
                             <Link
-                              href={listUrl(type, {
+                              href={buildListUrl(type, {
                                 category: cat,
                                 tag: activeTag,
                                 q,
@@ -272,7 +236,7 @@ export default function ContentTypeList({
                               {tags.map((tag) => (
                                 <Link
                                   key={tag}
-                                  href={listUrl(type, {
+                                  href={buildListUrl(type, {
                                     tag,
                                     category: activeCategory,
                                     q,
@@ -307,7 +271,7 @@ export default function ContentTypeList({
                   {page > 1 && (
                     <li>
                       <Link
-                        href={listUrl(type, {
+                        href={buildListUrl(type, {
                           page: page - 1,
                           tag: activeTag,
                           category: activeCategory,
@@ -325,7 +289,7 @@ export default function ContentTypeList({
                         className={p === page ? "count active" : "count"}
                       >
                         <Link
-                          href={listUrl(type, {
+                          href={buildListUrl(type, {
                             page: p,
                             tag: activeTag,
                             category: activeCategory,
@@ -340,7 +304,7 @@ export default function ContentTypeList({
                   {page < totalPages && (
                     <li>
                       <Link
-                        href={listUrl(type, {
+                        href={buildListUrl(type, {
                           page: page + 1,
                           tag: activeTag,
                           category: activeCategory,

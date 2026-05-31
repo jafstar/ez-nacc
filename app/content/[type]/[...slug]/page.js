@@ -1,7 +1,7 @@
 "use server";
 import { notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { getContent } from "ez-content";
+import { getContent, getContentTitle, getContentImage, getContentIntro } from "ez-content";
 import Header from "@/components/common/header/HeaderOne";
 import Footer from "@/components/common/footer/FooterOne";
 import ContentTypeDetail from "@/components/ContentTypeDetail";
@@ -15,13 +15,7 @@ export async function generateMetadata({ params }) {
   if (String(params.slug).includes("%")) return { title: "" };
   const resp = await getContent(`${params.type}/${params.slug.join("/")}`);
   const item = resp?.data?.[0];
-  return {
-    title:
-      item?.content_title ??
-      item?.content_fields?.title ??
-      item?.content_fields?.name ??
-      "",
-  };
+  return { title: getContentTitle(item) };
 }
 
 export default async function Page({ params }) {
@@ -38,13 +32,9 @@ export default async function Page({ params }) {
 
   const item = data[0];
   const breadcrumb = {
-    heading:
-      item.content_title ??
-      item.content_fields?.title ??
-      item.content_fields?.name ??
-      "",
-    bgImg: item.content_fields?.image ?? null,
-    body: item.content_fields?.intro?.split(".")?.[0] ?? " ",
+    heading: getContentTitle(item),
+    bgImg:   getContentImage(item),
+    body:    getContentIntro(item).split(".")?.[0] ?? " ",
   };
 
   return (

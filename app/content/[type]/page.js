@@ -1,7 +1,7 @@
 "use server";
 import { notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { getContent } from "ez-content";
+import { getContent, buildContentQuery } from "ez-content";
 import Header from "@/components/common/header/HeaderOne";
 import Footer from "@/components/common/footer/FooterOne";
 import ContentTypeList from "@/components/ContentTypeList";
@@ -22,16 +22,9 @@ export default async function Page({ params, searchParams }) {
 
   if (!type || type.includes("%")) return;
 
-  const { tag, category, q, page: pageParam } = searchParams ?? {};
-  const page = Math.max(1, parseInt(pageParam ?? "1", 10));
-  const limit = 12;
+  const { query, page, limit } = buildContentQuery(searchParams, { limit: 12 });
 
-  const queryOpts = { page, limit };
-  if (tag) queryOpts.tags = tag;
-  if (category) queryOpts.category = category;
-  if (q) queryOpts.q = q;
-
-  const resp = await getContent(type, { query: queryOpts });
+  const resp = await getContent(type, { query });
 
   if (!resp) return <>No Content</>;
 
@@ -55,9 +48,9 @@ export default async function Page({ params, searchParams }) {
           total={total > 0 ? total : data.length}
           page={page}
           limit={limit}
-          activeTag={tag ?? null}
-          activeCategory={category ?? null}
-          q={q ?? null}
+          activeTag={query.tags ?? null}
+          activeCategory={query.category ?? null}
+          q={query.q ?? null}
         />
       </main>
       {!isPreview && <Footer globals={globals} />}
