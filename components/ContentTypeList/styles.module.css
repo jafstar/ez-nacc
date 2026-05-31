@@ -1,0 +1,139 @@
+.sidebar {
+  background: #f8f8f8;
+  padding: 1.5rem;
+  border-radius: 4px;
+}
+
+.sidebarBlock {
+  margin-bottom: 1.75rem;
+}
+
+.sidebarTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.searchForm {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.searchInput {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d0d0d0;
+  border-radius: 3px;
+  font-size: 0.875rem;
+}
+
+.searchBtn {
+  padding: 0.5rem 0.875rem;
+  background: var(--thm-base, #222);
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.searchBtn:hover {
+  opacity: 0.85;
+}
+
+.filterList {
+  margin: 0;
+}
+
+.filterList li {
+  padding: 0.35rem 0;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.filterList li:last-child {
+  border-bottom: none;
+}
+
+.filterList li.active a {
+  font-weight: 700;
+}
+
+.tagCloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  background: #efefef;
+  border-radius: 2px;
+  font-size: 0.8rem;
+  color: inherit;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.tag:hover,
+.tagActive {
+  background: var(--thm-base, #222);
+  color: #fff;
+}
+
+.filterChips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.2rem 0.6rem;
+  background: #e8e8e8;
+  border-radius: 2px;
+  font-size: 0.8rem;
+}
+
+.chip a {
+  font-weight: 700;
+  color: inherit;
+  text-decoration: none;
+}
+
+.categoryBadge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.4rem;
+  color: var(--thm-base, #222);
+  text-decoration: none;
+}
+
+.dateLine {
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+
+.cardImage {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.empty {
+  padding: 2rem 0;
+  color: #888;
+}
