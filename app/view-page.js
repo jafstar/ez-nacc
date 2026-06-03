@@ -1,7 +1,8 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { composeContent, ViewContent, getComponentPath } from "ez-content";
+import { ViewContent, useEZDraftRender, composeContent, getComponentPath } from "ez-content/client";
+
 // import ViewContent from "@/components/ViewContent";
 import Header from "@/components/common/header/HeaderOne";
 import Footer from "@/components/common/footer/FooterOne";

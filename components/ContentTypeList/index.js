@@ -9,7 +9,7 @@ import {
   getContentTags,
   getContentCategory,
   buildListUrl,
-} from "ez-content";
+} from "ez-content/server";
 
 export default function ContentTypeList({
   data,

@@ -6,7 +6,7 @@ import {
   getContentImage,
   getContentTags,
   getContentCategory,
-} from "ez-content";
+} from "ez-content/server";
 
 export default function ContentTypeDetail({ item, type }) {
   const { content_fields, created_at } = item;

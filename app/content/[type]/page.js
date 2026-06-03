@@ -1,7 +1,9 @@
 "use server";
 import { notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { getContent, buildContentQuery } from "ez-content";
+import { getContent } from "ez-content";
+import { buildContentQuery } from "ez-content/server";
+
 import Header from "@/components/common/header/HeaderOne";
 import Footer from "@/components/common/footer/FooterOne";
 import ContentTypeList from "@/components/ContentTypeList";
